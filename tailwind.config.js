@@ -22,12 +22,36 @@ module.exports = {
         50: 'var(--color-tertiary-50)',
         20: 'var(--color-tertiary-20)',
       },
+      quaternary: {
+        main: 'var(--color-quaternary-main)',
+        80: 'var(--color-quaternary-80)',
+        50: 'var(--color-quaternary-50)',
+        20: 'var(--color-quaternary-20)',
+      },
+      error: {
+        main: 'var(--color-error-main)',
+        80: 'var(--color-error-80)',
+        50: 'var(--color-error-50)',
+        20: 'var(--color-error-20)',
+      },
+      gray: {
+        main: 'var(--color-gray-main)',
+        80: 'var(--color-gray-80)',
+        50: 'var(--color-gray-50)',
+        20: 'var(--color-gray-20)',
+      },
     },
     extend: {
       flex: {
         2: '2',
         3: '3',
         4: '4',
+      },
+      fontFamily: {
+        normal: ['SofiaPro-Regular'],
+        medium: ['SofiaPro-Medium'],
+        semibold: ['SofiaPro-SemiBold'],
+        bold: ['SofiaPro-Bold'],
       },
     },
   },
