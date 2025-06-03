@@ -1,2 +1,5 @@
+export * from './Button/Button';
+export * from './Line/Line';
 export * from './Provider/Provider';
-export * from './Theme/Theme';
+export * from './Spacing/Spacing';
+export * from './Text/Text';
