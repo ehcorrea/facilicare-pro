@@ -1,4 +1,3 @@
-import '../global.css';
 import { Stack } from 'expo-router';
 
 import { Provider } from '@/components';
@@ -6,7 +5,7 @@ import { Provider } from '@/components';
 export default function RootLayout() {
   return (
     <Provider>
-      <Stack>
+      <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="index" />
       </Stack>
     </Provider>

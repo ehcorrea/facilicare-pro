@@ -1,11 +1,3 @@
-import { Text, View } from 'react-native';
+import { InitialScreen } from '@/screens';
 
-export default function Index() {
-  return (
-    <View className="flex-1 justify-center items-center bg-primary-main">
-      <Text className="text-secondary-main">
-        Edit app/index.tsx to edit this screenn.
-      </Text>
-    </View>
-  );
-}
+export default InitialScreen;
