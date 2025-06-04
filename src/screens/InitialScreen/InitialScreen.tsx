@@ -1,6 +1,7 @@
-import { TouchableOpacity, View } from 'react-native';
 import { ImageBackground } from 'expo-image';
+import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
+import { TouchableOpacity, View } from 'react-native';
 
 import { Button, Line, Spancing, Text } from '@/components';
 
@@ -13,11 +14,14 @@ export function InitialScreen() {
 
   return (
     <ImageBackground
-      style={{ flex: 1 }}
+      className="flex-1"
       contentFit="cover"
       source={require('@/assets/images/initial.png')}
     >
-      <S.Gradient colors={['#00000080', '#1e21312f', '#2d35656f']}>
+      <LinearGradient
+        className="flex-1 p-[5%]"
+        colors={['#00000080', '#1e21312f', '#2d35656f']}
+      >
         <View className="flex-1">
           <View className="flex-2 items-start mt-[15%]">
             <Text.Title
@@ -25,7 +29,8 @@ export function InitialScreen() {
               color={80}
               numberOfLines={1}
               palette="gray"
-              size={90}
+              customSize={90}
+              height={50}
             >
               Bem-vindo ao
             </Text.Title>
@@ -34,12 +39,12 @@ export function InitialScreen() {
               color="main"
               numberOfLines={1}
               palette="primary"
-              size={50}
-              className="leading-[55px]"
+              customSize={50}
+              height={50}
             >
               Facilicare
             </Text.Title>
-            <Spancing y={6} />
+            <Spancing y="6" />
             <Text.Subtitle
               color={50}
               palette="gray"
@@ -52,43 +57,44 @@ export function InitialScreen() {
           <View className="flex-1 items-center justify-center">
             <View className="flex-row w-full items-center">
               <Line color="#ffffffa6" />
-              <S.Social
+              <Text
                 adjustsFontSizeToFit
                 numberOfLines={1}
                 size="large"
-                className="text-tertiary-50"
+                className="text-white flex-1 text-center"
               >
                 entrar com
-              </S.Social>
+              </Text>
               <Line color="#ffffffa6" />
             </View>
-            <Spancing y={10} />
+            <Spancing y="15" />
             <View className="flex-row">
               <Button.Account variant="facebook" />
-              <Spancing x={10} />
+              <Spancing x="10" />
               <Button.Account variant="google" />
             </View>
-            <Spancing y={10} />
+            <Spancing y="5" />
             <S.ButtonLogin>
-              <Text size="large" palette="white" className="leading-[30px]">
+              <Text size="large" palette="white">
                 Começar com email
               </Text>
             </S.ButtonLogin>
+            <Spancing y="5" />
+            <View className="flex-row justify-center w-full">
+              <S.TextSignUp>Não possui uma conta?</S.TextSignUp>
+              <Spancing x="2" />
+              <TouchableOpacity onPress={handleSignup}>
+                <S.TextSignUp
+                  textDecoration="underline"
+                  className="text-tertiary-50"
+                >
+                  Criar
+                </S.TextSignUp>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
-        <S.Footer>
-          <S.TextSignUp>Não possui uma conta?</S.TextSignUp>
-          <Spancing x={2} />
-          <TouchableOpacity onPress={handleSignup}>
-            <S.TextSignUp
-              textDecoration="underline"
-              className="text-tertiary-50"
-            >
-              Criar
-            </S.TextSignUp>
-          </TouchableOpacity>
-        </S.Footer>
-      </S.Gradient>
+      </LinearGradient>
     </ImageBackground>
   );
 }
