@@ -1,11 +1,16 @@
 import { TouchableOpacity, View } from 'react-native';
 import { ImageBackground } from 'expo-image';
+import { router } from 'expo-router';
 
 import { Button, Line, Spancing, Text } from '@/components';
 
 import * as S from './InitialScreen.styles';
 
 export function InitialScreen() {
+  const handleSignup = () => {
+    router.push('/signup');
+  };
+
   return (
     <ImageBackground
       style={{ flex: 1 }}
@@ -74,7 +79,7 @@ export function InitialScreen() {
         <S.Footer>
           <S.TextSignUp>Não possui uma conta?</S.TextSignUp>
           <Spancing x={2} />
-          <TouchableOpacity>
+          <TouchableOpacity onPress={handleSignup}>
             <S.TextSignUp
               textDecoration="underline"
               className="text-tertiary-50"
