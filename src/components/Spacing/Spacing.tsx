@@ -1,10 +1,5 @@
 import * as S from './Spacing.styles';
 
-export type SpancingProps = {
-  x?: number;
-  y?: number;
-};
-
-export function Spancing({ x = 0, y = 0 }: SpancingProps) {
+export function Spancing({ x, y }: S.ContainerProps) {
   return <S.Container testID="spacing" x={x} y={y} />;
 }
