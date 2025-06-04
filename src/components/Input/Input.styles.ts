@@ -4,8 +4,8 @@ import styled, { css, Theme } from '@emotion/native';
 export type InputState = 'error' | 'focused' | 'default';
 
 export type ContainerProps = {
+  size: 'large' | 'medium';
   state: 'error' | 'focused' | 'default';
-  size: 'small' | 'medium';
 };
 
 const containerModifiders = {
@@ -18,20 +18,20 @@ const containerModifiders = {
   default: (theme: Theme) => css`
     border-color: ${theme.colors.gray.main};
   `,
-  small: () => css`
-    height: 540px;
-  `,
   medium: () => css`
     height: 50px;
+  `,
+  large: () => css`
+    height: 60px;
   `,
 };
 
 const inputModifiders = {
-  small: (theme: Theme) => css`
-    font-size: ${theme.fonts.size.medium}px;
-  `,
   medium: (theme: Theme) => css`
     font-size: ${theme.fonts.size.large}px;
+  `,
+  large: (theme: Theme) => css`
+    font-size: ${theme.fonts.size.xlarge}px;
   `,
 };
 
@@ -51,12 +51,13 @@ export const Container = styled.View<ContainerProps>`
 
 export const Input = styled(TextInput)<Pick<ContainerProps, 'size'>>`
   ${({ theme, size }) => css`
+    align-items: center;
+    color: ${theme.colors.black.main};
     flex: 1;
     font-family: ${theme.fonts.weight.regular};
     font-size: ${theme.fonts.size.large}px;
-    color: ${theme.colors.black.main};
-    align-items: center;
+    padding-vertical: 4%;
+
     ${inputModifiders[size](theme)};
-    padding-vertical: 13px;
   `}
 `;

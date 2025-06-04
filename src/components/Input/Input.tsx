@@ -17,12 +17,12 @@ import * as S from './Input.styles';
 export type TextInputProps = {
   containerProps?: ViewProps;
   error?: string;
+  forceHasFocus?: boolean;
   label: string;
   labelProps?: TextProps;
-  variant?: 'default' | 'password';
-  size?: S.ContainerProps['size'];
   onFocus?: () => void;
-  forceHasFocus?: boolean;
+  size?: S.ContainerProps['size'];
+  variant?: 'default' | 'password';
 } & TextInputRNProps;
 
 type GetInputStateParams = {
@@ -84,7 +84,7 @@ export const Input = forwardRef<TextInputRN, TextInputProps>(
         <Text palette={hasFocus ? 'primary' : 'gray'} {...labelProps}>
           {label}
         </Text>
-        <Spancing y={5} />
+        <Spancing y="2" />
         <S.Container
           size={size}
           state={getInputState({ hasError: !!error, hasFocus })}
@@ -119,9 +119,8 @@ export const Input = forwardRef<TextInputRN, TextInputProps>(
             </TouchableOpacity>
           )}
         </S.Container>
-        <Spancing y={1} />
+        <Spancing y="1" />
         <Text palette="error">{error}</Text>
-        <Spancing y={2} />
       </Pressable>
     );
   }
