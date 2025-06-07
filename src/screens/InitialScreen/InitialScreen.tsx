@@ -12,6 +12,10 @@ export function InitialScreen() {
     router.push('/signup');
   };
 
+  const handleSignin = () => {
+    router.push('/signin');
+  };
+
   return (
     <ImageBackground
       className="flex-1"
@@ -74,7 +78,7 @@ export function InitialScreen() {
               <Button.Account variant="google" />
             </View>
             <Spancing y="5" />
-            <S.ButtonLogin>
+            <S.ButtonLogin onPress={handleSignin}>
               <Text size="large" palette="white">
                 Começar com email
               </Text>

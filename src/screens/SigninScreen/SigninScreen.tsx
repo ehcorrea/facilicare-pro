@@ -1,15 +1,15 @@
 import { ScrollView, View } from 'react-native';
 
 import {
+  Button,
+  HeaderPublic,
+  Input,
+  Line,
   Spancing,
   Text,
-  Input,
-  Button,
-  Line,
-  HeaderPublic,
 } from '@/components';
 
-export function SignupScreen() {
+export function SigninScreen() {
   return (
     <>
       <HeaderPublic>
@@ -21,35 +21,34 @@ export function SignupScreen() {
         contentContainerStyle={{ padding: '5%' }}
         showsVerticalScrollIndicator={false}
       >
-        <Text.Title size="xhuge">Criar Conta</Text.Title>
+        <Text.Title size="xhuge">Entrar</Text.Title>
         <Spancing y="15" />
-        <Input label="Nome" placeholder="Nome Completo" />
-        <Spancing y="5" />
         <Input label="Email" placeholder="exemplo@email.com" />
-        <Spancing y="5" />
         <Input label="Senha" variant="password" placeholder="••••••" />
         <Spancing y="5" />
-        <Input label="Repetir senha" variant="password" placeholder="•••••••" />
+        <Text palette="primary" size="medium">
+          Esqueceu sua senha?
+        </Text>
         <Spancing y="15" />
         <Button elevation className="w-[60%] self-center">
-          CRIAR CONTA
+          ENTRAR
         </Button>
         <Spancing y="5" />
         <View className="flex-row self-center items-center">
           <Text size="large" className="text-[#5b5b5e]">
-            Já tem um conta?
+            Não tem uma conta?
           </Text>
           <Spancing x="3" />
-          <Text palette="primary">Entrar</Text>
+          <Text palette="primary">Criar</Text>
         </View>
         <Spancing y="15" />
         <View className="flex-row flex-1 items-center">
           <Line />
-          <Spancing x="10" />
+          <Spancing x="13" />
           <Text size="large" className="text-[#5b5b5e]">
-            criar com
+            entrar com
           </Text>
-          <Spancing x="10" />
+          <Spancing x="13" />
           <Line />
         </View>
         <Spancing y="15" />

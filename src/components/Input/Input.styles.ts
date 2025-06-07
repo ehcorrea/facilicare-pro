@@ -43,6 +43,7 @@ export const Container = styled.View<ContainerProps>`
     flex-direction: row;
     min-height: 30px;
     padding-horizontal: 5px;
+    overflow: hidden;
 
     ${containerModifiders[state](theme)}
     ${containerModifiders[size]()}
@@ -56,7 +57,6 @@ export const Input = styled(TextInput)<Pick<ContainerProps, 'size'>>`
     flex: 1;
     font-family: ${theme.fonts.weight.regular};
     font-size: ${theme.fonts.size.large}px;
-    padding-vertical: 4%;
 
     ${inputModifiders[size](theme)};
   `}
